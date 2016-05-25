@@ -15,7 +15,7 @@ class HandleCsvFromExcel
     csv = nil
     open(path, 'r:windows-31j') do |f|
       str = f.read.encode('UTF-8')
-      csv = CSV.parse(str)
+      csv = CSV.parse(str, headers: true)
     end
     csv
   end
